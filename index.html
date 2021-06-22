@@ -15,7 +15,7 @@
             <h1>Stop Watch</h1>
         </div>
 <div class="stopWatch ">
-<h1>
+<h1 id="display">
     <span id="mint">00</span>
     <span>:</span>
     <span id="sec">00</span>
@@ -25,7 +25,13 @@
 <div class="btn">
 <button  id="start" onclick="startStop()">Start</button>
 <button id="reset"  onclick="reset()">Reset</button>
-<button disabled onclick="save()">Save</button>
+<button onclick="save()">Save</button>
+</div>
+
+<div class="saveTime">
+    <ul id="timeList">
+        
+    </ul>
 </div>
 
 

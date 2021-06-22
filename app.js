@@ -9,9 +9,9 @@ function startStop() {
     if (startstop === 1) {
         start();
         document.getElementById("start").innerHTML = "Stop";
-        document.getElementById("reset").disabled = true ;
+
     } else if (startstop === 2) {
-        document.getElementById("reset").disabled = false ;
+
         document.getElementById("start").innerHTML = "Start";
         startstop = 0;
         stop();
@@ -39,7 +39,7 @@ function start() {
         } else { document.getElementById("milisec").innerHTML = ++milisec }
 
 
-        document.getElementById("start").innerHTML = "Stop";
+        // document.getElementById("start").innerHTML = "Stop";
 
         if (milisec === 100) {
 
@@ -48,6 +48,8 @@ function start() {
 
                 document.getElementById("sec").innerHTML = "0" + ++sec;
             } else { document.getElementById("sec").innerHTML = ++sec; }
+
+            document.getElementById("milisec").innerHTML = "00";
         }
 
         if (sec == 60) {
@@ -57,11 +59,10 @@ function start() {
                 document.getElementById("mint").innerHTML = "0" + ++mint;
             } else { document.getElementById("mint").innerHTML = ++mint; }
 
+            document.getElementById("sec").innerHTML = "00";
+
             sec = 0;
         }
-
-
-
 
     }, 10)
 }
@@ -76,8 +77,27 @@ function stop() {
 
 function reset() {
 
+    startstop = 1
+    startStop();
+    clearInterval(x);
+
+
     document.getElementById("milisec").innerHTML = "00";
     document.getElementById("sec").innerHTML = "00";
     document.getElementById("mint").innerHTML = "00";
 
+    milisec = 0
+    sec = 0
+    mint = 0
+
+}
+
+
+function save(){
+    
+    var ul = document.getElementById('timeList')
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(document.getElementById('display').innerText));
+    ul.appendChild(li);
+    
 }
