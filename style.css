@@ -1,3 +1,6 @@
+body{
+    overflow:hidden;
+}
 .main{
     width: 100%;
     /* height: 600px; */
@@ -10,10 +13,16 @@
     width: 100%;
 
 }
+
+.heading h1{
+    letter-spacing: 6px;
+  text-decoration: underline;
+}
 h1 {
     text-align: center;
     color: white;
     margin-bottom: 40px;
+    
 }
 .stopWatch h1 span{
     text-align: center;
@@ -32,6 +41,22 @@ border-radius: 5px;
   }
 
 
+.saveTime{
+    
+    height: 400px;
+    background-color:rgb(40, 40, 70);
+    /* margin: 0 auto; */
+    padding: 10px 0 10px 10px ;
+    overflow-y: scroll;
+    word-spacing: 10px;
+   
+}
+
+
+
 .saveTime ul li{
 color: white;
+list-style-type: decimal;
+margin-bottom: 10px;
+font-size: 20px;
 }
